@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7 Dias de Motivação e Liberdade</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body {
+            background: linear-gradient( rgba(0,0,0,0.75), rgba(0,0,0,0.85) ), url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1600&q=80') no-repeat center/cover;
+            color: white;
+            min-height: 100vh;
+            scroll-behavior: smooth;
+        }
+        header {
+            backdrop-filter: blur(12px);
+            background: rgba(0, 0, 0, 0.4);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding: 20px 50px;
+            position: fixed; top: 0; left: 0; right: 0;
+            display: flex; justify-content: space-between; align-items: center;
+            z-index: 1000;
+        }
+        header h1 { font-size: 22px; font-weight: 700; color: gold; }
+        .hero {
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            text-align: center; padding-top: 140px; padding-bottom: 100px;
+        }
+        .hero h2 {
+            font-size: 42px; font-weight: 700;
+            background: linear-gradient(90deg, gold, #fff);
+            -webkit-background-clip: text; color: transparent;
+            margin-bottom: 15px;
+        }
+        .hero p {
+            font-size: 18px; max-width: 650px; line-height: 1.6; color: #e4e4e4;
+            margin-bottom: 25px;
+        }
+        .price-box {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(10px);
+            padding: 25px 40px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.15);
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .price-box .old-price { text-decoration: line-through; opacity: 0.7; font-size: 18px; }
+        .price-box .new-price { font-size: 34px; font-weight: 700; color: gold; }
+
+        /* === TIMER DESTACADO === */
+        .countdown {
+            font-size: 24px;
+            font-weight: 700;
+            color: gold;
+            background: rgba(255, 215, 0, 0.1);
+            border: 2px solid gold;
+            border-radius: 12px;
+            padding: 15px 30px;
+            display: inline-block;
+            margin-top: 10px;
+            box-shadow: 0 0 15px rgba(255,215,0,0.5);
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 15px rgba(255,215,0,0.4); transform: scale(1); }
+            50% { box-shadow: 0 0 25px rgba(255,215,0,0.8); transform: scale(1.05); }
+            100% { box-shadow: 0 0 15px rgba(255,215,0,0.4); transform: scale(1); }
+        }
+        .countdown-label {
+            font-size: 18px;
+            font-weight: 600;
+            color: #ffcc00;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .btn {
+            background: linear-gradient(90deg, #d4af37, gold);
+            color: #000; padding: 15px 40px;
+            border: none; border-radius: 8px;
+            font-size: 18px; font-weight: 700;
+            cursor: pointer; transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn:hover { transform: scale(1.05); }
+
+        section { padding: 60px 20px; text-align: center; }
+        h3 { font-size: 28px; color: gold; margin-bottom: 15px; }
+        p { color: #e4e4e4; line-height: 1.7; }
+        .modules { max-width: 800px; margin: 0 auto; text-align: left; }
+        .modules div {
+            background: rgba(255,255,255,0.05);
+            margin: 10px 0;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid gold;
+            transition: 0.3s;
+        }
+        .modules div:hover {
+            background: rgba(255,255,255,0.1);
+            transform: scale(1.02);
+        }
+        footer {
+            text-align: center; padding: 30px 0; margin-top: 100px;
+            background: rgba(0,0,0,0.7); backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>7 Dias de Motivação</h1>
+    <span>Transforme sua mente e sua vida</span>
+</header>
+
+<section class="hero">
+    <h2>Seu recomeço começa agora.</h2>
+    <p>Adquira o e-book <strong>"7 Dias de Motivação e Liberdade"</strong> e aprenda, dia após dia, a romper com a estagnação, destravar sua mente e viver com propósito e intensidade.</p>
+
+    <div class="price-box">
+        <span class="old-price">De R$47,00</span> <br>
+        <span class="new-price">Por apenas R$27,00</span>
+    </div>
+
+    <span class="countdown-label">⚠ Oferta expira em:</span>
+    <div class="countdown" id="timer">00:00:00</div>
+</section>
+
+<section>
+    <h3>O que você vai aprender em 7 dias:</h3>
+    <div class="modules">
+        <div><strong>Introdução: O Início da Sua Jornada</strong><br>Você vai entender o ponto de partida da sua transformação e descobrir que é possível mudar completamente o rumo da sua história.</div>
+        <div><strong>Como Usar Este Guia</strong><br>Aprenda a aplicar os ensinamentos de forma prática, mesmo com uma rotina corrida — passo a passo para gerar resultados reais.</div>
+        <div><strong>Dia 1: Liberdade Começa na Mente</strong><br>Destrave seus pensamentos e liberte-se das amarras internas que impedem seu avanço.</div>
+        <div><strong>Dia 2: O Poder da Disciplina</strong><br>Descubra como criar consistência e foco para manter sua caminhada firme, mesmo quando a motivação falhar.</div>
+        <div><strong>Dia 3: Coragem Para Recomeçar</strong><br>Aprenda a transformar fracassos em novos começos — com fé e força.</div>
+        <div><strong>Dia 4: A Força da Gratidão</strong><br>Entenda como a gratidão muda sua energia, abre portas e atrai oportunidades.</div>
+        <div><strong>Dia 5: Perseverança em Meio às Lutas</strong><br>Descubra o segredo para continuar firme quando tudo parece desmoronar.</div>
+        <div><strong>Dia 6: Confiança no Futuro</strong><br>Reative sua fé e esperança para enxergar o que Deus ainda vai fazer em sua vida.</div>
+        <div><strong>Dia 7: Viva com Propósito</strong><br>Chegou o momento de viver com intencionalidade e propósito, guiado pela fé.</div>
+        <div><strong>Bônus: 10 Frases de Impacto</strong><br>Mensagens poderosas para fortalecer sua mente e sua fé diariamente.</div>
+        <div><strong>Conclusão: Os Próximos Passos</strong><br>Saiba como continuar crescendo e mantendo a chama acesa mesmo após os 7 dias.</div>
+    </div>
+
+    <br><br>
+    <a href="https://pay.kiwify.com.br/MbxzdUK" class="btn">Quero garantir agora</a>
+</section>
+
+<footer>
+    © 2025 - Todos os direitos reservados | Kaique Oliveira
+</footer>
+
+<script>
+    // Contagem regressiva (reinicia a cada 30 minutos)
+    let totalTime = 30 * 60;
+    function updateTimer() {
+        let hours = String(Math.floor(totalTime / 3600)).padStart(2, '0');
+        let minutes = String(Math.floor((totalTime % 3600) / 60)).padStart(2, '0');
+        let seconds = String(totalTime % 60).padStart(2, '0');
+        document.getElementById('timer').textContent = `${hours}:${minutes}:${seconds}`;
+        if (totalTime > 0) {
+            totalTime--;
+        } else {
+            totalTime = 30 * 60; // reinicia a contagem
+        }
+    }
+    setInterval(updateTimer, 1000);
+    updateTimer();
+</script>
+
+</body>
+</html>
